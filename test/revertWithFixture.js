@@ -32,7 +32,7 @@ describe("revertWithFix", function() {
             
             const {contract} = await loadFixture(deployFixture)
             
-            await expect(contract.addNum(0)).to.be.revertedWith("This number is not 0!")
+            await expect(contract.addNum(0)).to.be.revertedWith("This number is 0!")
             await expect(contract.addNum(1)).to.be.revertedWith("No odd nums allowed!")
             
 
