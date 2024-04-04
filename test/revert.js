@@ -9,8 +9,7 @@ describe("revert", function() {
     describe("addNum", function() {
 
         it("Should set the number", async function() {
-            const [owner, friend, payer] = await ethers.getSigners();
-        
+            
             const factory = await ethers.getContractFactory("Revert");
             const contract = await factory.deploy();
             
@@ -18,13 +17,13 @@ describe("revert", function() {
 
             let num = await contract.num()
 
-            expect(num).to.equal(10)
+            //expect(num).to.equal(10)
+            expect(await contract.num()).to.equal(10)
 
         })
 
         it("Should revert if number is 0", async function() {
-            const [owner, friend, payer] = await ethers.getSigners();
-        
+            
             const factory = await ethers.getContractFactory("Revert");
             const contract = await factory.deploy();
             
